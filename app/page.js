@@ -16,19 +16,19 @@ const cart = () => {
   }
   return (
     <>
-    <table>
-      <thead>
-        <tr>
-          <th>sl.No</th>
-          <th>Product Name</th>
-          <th>Product img</th>
-          <th>Price</th>
-          <th>Quantity</th>
-          <th>Total price</th>
-        </tr>
-      </thead>
-      <tbody>
-        {itemDetails.map((item) => {
+<table className="table table-warning">
+  <thead>
+    <tr>
+      <th scope="col">sl.No</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Product img</th>
+      <th scope="col">Price</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Total price</th>
+    </tr>
+  </thead>
+  <tbody>
+  {itemDetails.map((item) => {
           return (
             <CartIteam
               key={item.id}
@@ -40,18 +40,15 @@ const cart = () => {
               />
               )
         })}
-      </tbody>
-      <tfoot>
+  </tbody>
+  <tfoot>
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td><button onClick={addTocart}>Add to cart</button></td>
+          <td colSpan="4"></td>
+          <td><button type="button" className="btn btn-primary" onClick={addTocart}>Add to cart</button></td>
           <td>Grand Total={gtotal}</td>
         </tr>
       </tfoot>
-    </table>
+</table>
     </>
   )
 }

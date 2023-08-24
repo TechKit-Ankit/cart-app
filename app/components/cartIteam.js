@@ -22,14 +22,14 @@ const CartIteam = (props) => {
     }
     return (
     <tr>
-      <td>{props.id}</td>
+      <td scope="row">{props.id}</td>
       <td>{props.name}</td>
       <td><img src={props.img} alt="" /></td>
       <td>{props.price}</td>
       <td>
-       <button onClick={increaseQuantity}>+</button>
+       <button type="button" className="btn btn-light" onClick={increaseQuantity}>+</button>
        {quantity}
-       <button onClick={decreaseQuantity}>-</button>
+       <button type="button" className="btn btn-light" onClick={decreaseQuantity}>-</button>
       </td>
       <td>{total}</td>
     </tr>
